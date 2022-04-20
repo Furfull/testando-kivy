@@ -1,0 +1,33 @@
+<Main2Widget>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        TextInput:
+            id: textbox
+            multiline: False
+            hint_text: "I'm an input box!"
+            font_size: 20
+
+        GridLayout:
+            cols: 3
+
+            Button:
+                id: btn1
+                text: 'PESQUISAR'
+                on_press: root.callback(self.text)
+<Karaoke>:
+    id: karaoke
+    BoxLayout:
+        orientation: 'vertical'
+        VideoPlayer:
+            id: videok
+            source: "C:/lgabriel/projetos/karaoke/Espanhola.avi"
+            state: "pause"
+            options: {'eos': 'loop'}
+            allow_stretch: True
+            size: 1920, 1080
+        Button:
+            id: botao
+            size_hint: 1, 0.1
+            text: ''
+            on_release: app.root.current = 'menu'
